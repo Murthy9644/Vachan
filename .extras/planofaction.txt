@@ -1,0 +1,37 @@
+=> Server side:
+    The server will be running in a local machine for now.
+    It manages the connection requests from multile clients, their account info, their connections.
+    Acts as a mediater between clients.
+
+=> Client side:
+    They are the users that create and manage their accounts and connect with other clients.
+
+=> Backend process when a client creates new account:
+    step 1
+        Program asks to enter username and create unique pswd for their account and generates unique id for them.
+        Collects their username.
+
+    step 1 [optional]
+        Client can choose to create a profile by providing additional info like email, phone number, etc.
+        This info is sent to server and stored in the database.
+
+    step 2
+        Sends the info as a json object ${id: ... , pswd: ..., username: ...} to server.
+        Server stores the data in the local database after checking if the id is unique.
+        Server sends back a success message to client.
+
+    step 3
+        Client receives the success message and stores the id and pswd in a local file for future use.
+
+    step 4 [Connecting with other clients]
+        When a client clicks add friend and enters the other client's id [if they know] or search them by username and send connection request.
+        The request is sent to server which checks if the id exists in the database.
+        If it exists, server forwards the request to the other client.
+        The other client can accept or reject the request.
+
+    step 5
+        If accepted, both clients are added to each other's friend list in the database.
+        Now, a page is created for both clients to chat with each other.
+        Whenever any client send a message in that page, the message is sent to the server as an array of $[sender_id, reciever_id, time&date, message].
+
+        Server forwards the messages between the clients.
