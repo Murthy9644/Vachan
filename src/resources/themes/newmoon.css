@@ -1,0 +1,51 @@
+.root {
+    -fx-font-family: "Consolas";
+}
+
+#body{
+    -fx-background-color: rgb(18, 18, 18);
+}
+
+#loginpane{
+    -fx-background-color: rgb(38, 38, 38);
+    -fx-background-radius: 10px;
+}
+
+#createaccbtn, #loginbtn{
+    -fx-background-color: rgb(66, 133, 244);
+    -fx-text-fill: rgb(235, 235, 235);
+    -fx-background-radius: 5px;
+} #createaccbtn:hover, #loginbtn:hover{
+    -fx-background-color: rgba(66, 133, 244, 0.5);
+} #createaccbtn:pressed, #loginbtn:pressed{
+    -fx-border-color: rgb(3, 218, 197);
+    -fx-border-width: 0.5px;
+    -fx-text-fill: rgba(235, 235, 235, 0.5);
+}
+
+#username, #pswd{
+    -fx-background-color: rgb(18, 18, 18);
+    -fx-border-color: transparent transparent rgb(66, 133, 244) transparent;
+    -fx-background-radius: 5px;
+    -fx-text-fill: rgb(235, 235, 235);
+    -fx-text-alignment: center;
+    -fx-font-size: 13px;
+} #username:focused, #pswd:focused{
+    -fx-border-color: transparent transparent rgb(3, 218, 197) transparent;
+}
+
+#haveaccbtn, #donthaveaccbtn{
+    -fx-font-size: 12px;
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(3, 218, 197);
+} #haveacc:hover{
+    -fx-text-fill: rgb(66, 133, 244);
+}
+
+#createacclabel{
+    -fx-text-fill: rgb(235, 235, 235);
+}
+
+#validationlbl{
+    -fx-text-fill: rgb(255, 82, 82);
+}

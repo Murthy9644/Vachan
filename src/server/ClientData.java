@@ -2,16 +2,16 @@ package server;
 
 public class ClientData{
     long id;
-    String name, pswd;
+    String username, pswd;
     
     boolean fileWriter(String location, String objects[]){
 
         return true;
     }
     
-    ClientData(long id, String name, String pswd){
+    ClientData(long id, String username, String pswd){
         this.id = id;
-        this.name = name;
+        this.username = username;
         this.pswd = pswd;
     }
 }

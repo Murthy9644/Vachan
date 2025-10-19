@@ -1,0 +1,26 @@
+# New Moon{
+    background: rgb(18, 18, 18);
+    background-alt: rgb(38, 38, 38);
+    text: rgb(235, 235, 235);
+    accent: rgb(66, 133, 244);
+    accent-alt: rgb(3, 218, 197);
+    utility: rgb(255, 82, 82);
+}
+
+# Dawn Light {
+    background: rgb(250, 250, 250);
+    background-alt: rgb(240, 242, 245);
+    text: rgb(33, 33, 33);
+    accent: rgb(25, 118, 210);
+    accent-alt: rgb(56, 142, 60);
+    utility: rgb(244, 67, 54);
+}
+
+# Neo Vibe {
+    background: rgb(20, 18, 45);
+    background-alt: rgb(35, 31, 75);
+    text: rgb(230, 230, 255);
+    accent: rgb(255, 64, 129);
+    accent-alt: rgb(0, 230, 255);
+    utility: rgb(255, 193, 7);
+}
