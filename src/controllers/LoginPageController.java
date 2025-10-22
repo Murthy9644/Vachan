@@ -1,5 +1,6 @@
 package controllers;
 
+import backend.FileIO;
 import backend.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,12 +13,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import backend.Processes;
+
 public class LoginPageController{
 
     // Global things
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private final FileIO files = new FileIO();
     
     @FXML
     private TextField username;
@@ -42,7 +46,7 @@ public class LoginPageController{
     }
 
     @FXML
-    private void login(){
+    private void login(ActionEvent event) throws Exception{
         
         if (username.getText().equals("")){
             username.setStyle(
@@ -70,6 +74,27 @@ public class LoginPageController{
                 "-fx-border-color: transparent transparent rgb(66, 133, 244) transparent;"
             );
             validationlbl.setText("");
+        }
+
+        Boolean ack = Processes.authenticateUser(Long.parseLong(username.getText()), pswd.getText());
+
+        if (ack){
+            root = Utils.setRoot("home");
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = ((Node) (event.getSource())).getScene();
+            scene.setRoot(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
+        else{
+            username.setStyle(
+                "-fx-border-color: transparent transparent rgb(66, 133, 244) transparent;"
+            );
+            pswd.setStyle(
+                "-fx-border-color: transparent transparent rgb(66, 133, 244) transparent;"
+            );
+            validationlbl.setText("ID or password is incorrect");
         }
     }
 }

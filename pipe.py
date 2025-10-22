@@ -15,8 +15,15 @@ acknowledge = '''
 '''
 
 codestrings = {
-    "maincompile": 'javac -d bin --module-path "D:/Java/JavaFX/javafx-sdk-21.0.8/lib" --add-modules javafx.controls,javafx.fxml src/Main.java',
-    "mainrun": 'cd bin && java --module-path "D:/Java/JavaFX/javafx-sdk-21.0.8/lib" --add-modules javafx.controls,javafx.fxml Main',
+    "maincompile": 'javac -d bin ^'
+    '--module-path "D:/Java/JavaFX/javafx-sdk-21.0.8/lib;D:/Java/external-jars" ^'
+    '--add-modules javafx.controls,javafx.fxml,com.fasterxml.jackson.databind ^'
+    'src/Main.java src/backend/*.java src/controllers/*.java',
+
+    "mainrun": 'cd bin && java ^'
+    '--module-path "D:/Java/JavaFX/javafx-sdk-21.0.8/lib;D:/Java/external-jars" ^'
+    '--add-modules javafx.controls,javafx.fxml,com.fasterxml.jackson.databind ^'
+    'Main',
 }
 
 class CompileNRun:

@@ -1,5 +1,7 @@
 package controllers;
 
+import backend.FileIO;
+import backend.ServerCommunication;
 import backend.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +20,7 @@ public class SignupPageController{
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private static final FileIO files = new FileIO();
 
     @FXML
     private Button haveaccbtn, createaccbtn;
@@ -42,7 +45,7 @@ public class SignupPageController{
     }
 
     @FXML
-    private void createAcc(){
+    private void createAcc(ActionEvent event) throws Exception{
         
         if (username.getText().equals("")){
             username.setStyle(
@@ -71,5 +74,17 @@ public class SignupPageController{
             );
             validationlbl.setText("");
         }
+
+        Long id = System.currentTimeMillis();
+
+        files.writeUserData(new String[] {username.getText(), pswd.getText()});
+        ServerCommunication.sendLoginInfo(new Object[] {id, username.getText(), pswd.getText()});
+        
+        root = Utils.setRoot("home");
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = ((Node) (event.getSource())).getScene();
+        scene.setRoot(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
