@@ -11,18 +11,25 @@ public class ServerCommunication{
     private static PrintWriter output;
 
     public static Boolean sendLoginInfo(Object data[]){
-        output.println((Long) data[0]);
-        output.println((String) data[1]);
-        output.println((String) data[2]);
+        output.println((String) data[0]);   // username
+        output.println("STOREREGISTERINFO");    // Request
+        String ack = input.nextLine();
+
+        if (ack.equals("~ACC-EXISTS")) return false;
+
+        output.println((String) data[1]);   // Password
 
         return true;
     }
 
-    public static String getLoginInfo(long id){
+    public static String getLoginInfo(String username){
+        output.println(username);
         output.println("GETLOGININFO");
-        output.println((long) id);
+        String pswd = input.nextLine();
 
-        return input.nextLine();
+        if (pswd.equals("~NO-ACC-FOUND")) return null;
+
+        return pswd;
     }
 
     public static void fireClientConnection() throws Exception{
@@ -34,7 +41,7 @@ public class ServerCommunication{
     public static void stopClientConnextion(){
 
         try{
-            output.println("exit");
+            output.println("EXIT");
             
             input.close();
             output.close();

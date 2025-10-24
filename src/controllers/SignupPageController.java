@@ -75,10 +75,20 @@ public class SignupPageController{
             validationlbl.setText("");
         }
 
-        Long id = System.currentTimeMillis();
-
         files.writeUserData(new String[] {username.getText(), pswd.getText()});
-        ServerCommunication.sendLoginInfo(new Object[] {id, username.getText(), pswd.getText()});
+        Boolean ack = ServerCommunication.sendLoginInfo(new Object[] {username.getText(), pswd.getText()});
+
+        if (! ack){
+            username.setStyle(
+                "-fx-border-color: transparent transparent rgb(255, 82, 82) transparent;"
+            );
+            pswd.setStyle(
+                "-fx-border-color: transparent transparent rgb(255, 82, 82) transparent;"
+            );
+            validationlbl.setText("Username already taken. Try another one!");
+
+            return;
+        }
         
         root = Utils.setRoot("home");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

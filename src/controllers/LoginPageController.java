@@ -1,7 +1,5 @@
 package controllers;
 
-import backend.FileIO;
-import backend.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -14,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import backend.Processes;
+import backend.Utils;
 
 public class LoginPageController{
 
@@ -21,7 +20,6 @@ public class LoginPageController{
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private final FileIO files = new FileIO();
     
     @FXML
     private TextField username;
@@ -76,9 +74,19 @@ public class LoginPageController{
             validationlbl.setText("");
         }
 
-        Boolean ack = Processes.authenticateUser(Long.parseLong(username.getText()), pswd.getText());
-
-        if (ack){
+        Boolean ack = Processes.authenticateUser(username.getText(), pswd.getText());
+        
+        if (ack == null){
+            username.setStyle(
+                "-fx-border-color: transparent transparent rgb(66, 133, 244) transparent;"
+            );
+            pswd.setStyle(
+                "-fx-border-color: transparent transparent rgb(66, 133, 244) transparent;"
+            );
+            validationlbl.setText("Account doesn't exist");
+        }
+                
+        else if (ack){
             root = Utils.setRoot("home");
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = ((Node) (event.getSource())).getScene();
