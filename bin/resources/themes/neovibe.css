@@ -1,0 +1,170 @@
+.root {
+    -fx-font-family: "Consolas";
+}
+
+/* Base Layouts */
+#body {
+    -fx-background-color: rgb(20, 18, 45);
+}
+
+#loginpane {
+    -fx-background-color: rgb(35, 31, 75);
+    -fx-background-radius: 10px;
+}
+
+/* Labels */
+#createacclabel {
+    -fx-font-size: 13px;
+    -fx-text-fill: rgb(230, 230, 255);
+}
+
+/* Buttons */
+#createaccbtn, #loginbtn {
+    -fx-background-color: rgb(255, 64, 129);
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-background-radius: 5px;
+    -fx-font-size: 13px;
+}
+
+#createaccbtn:hover, #loginbtn:hover {
+    -fx-background-color: rgba(255, 64, 129, 0.6);
+}
+
+#createaccbtn:pressed, #loginbtn:pressed {
+    -fx-border-color: rgb(0, 230, 255);
+    -fx-border-width: 0.5px;
+    -fx-text-fill: rgba(230, 230, 255, 0.6);
+}
+
+/* Text Fields */
+#username, #pswd {
+    -fx-background-color: rgb(20, 18, 45);
+    -fx-border-color: transparent transparent rgb(255, 64, 129) transparent;
+    -fx-background-radius: 5px;
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-text-alignment: center;
+    -fx-font-size: 14px;
+}
+
+#username:focused, #pswd:focused {
+    -fx-border-color: transparent transparent rgb(0, 230, 255) transparent;
+}
+
+/* Navigation and Links */
+#haveaccbtn, #donthaveaccbtn {
+    -fx-font-size: 13px;
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(0, 230, 255);
+}
+
+#haveaccbtn:hover, #donthaveaccbtn:hover {
+    -fx-text-fill: rgb(255, 64, 129);
+}
+
+/* Validation */
+#validationlbl {
+    -fx-text-fill: rgb(255, 193, 7);
+}
+
+/* Home Screen Layout */
+#homescreen {
+    -fx-background-color: rgb(20, 18, 45);
+}
+
+#header {
+    -fx-background-color: rgb(20, 18, 45);
+}
+
+#mainheader {
+    -fx-border-color: transparent transparent rgb(230, 230, 255) rgb(230, 230, 255);
+    -fx-border-width: 0.2px;
+}
+
+#vachancontainer {
+    -fx-background-color: rgb(35, 31, 75);
+    -fx-border-color: transparent transparent rgb(230, 230, 255) transparent;
+    -fx-border-width: 0.2px;
+}
+
+#sidebar {
+    -fx-background-color: rgb(35, 31, 75);
+    -fx-border-color: transparent rgb(230, 230, 255) transparent transparent;
+    -fx-border-width: 0.2px;
+}
+
+#onlineList {
+    -fx-background-color: rgb(35, 31, 75);
+}
+
+#sidebarbuffer {
+    -fx-border-color: transparent transparent rgb(230, 230, 255) transparent;
+    -fx-border-width: 0.2px;
+}
+
+/* Texts */
+#vachantext, #wlcmtext, #recentchatslbl, #onlineListLabel {
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-font-weight: bold;
+}
+
+#vachantext {
+    -fx-font-size: 16px;
+}
+
+#recentchatslbl {
+    -fx-font-size: 15px;
+}
+
+#onlineListLabel {
+    -fx-font-size: 14px;
+}
+
+/* Icon Buttons and Topbar Items */
+#headerStngs, #notifications, #profilepic, 
+#homeBtn, #chatsBtn, #contactsBtn, #newchatBtn, 
+#sidebarStngs, #logoutBtn {
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-background-color: transparent;
+}
+
+#headerStngs:hover, #notifications:hover, #profilepic:hover, 
+#homeBtn:hover, #chatsBtn:hover, #contactsBtn:hover, #newchatBtn:hover, 
+#sidebarStngs:hover, #logoutBtn:hover {
+    -fx-text-fill: rgb(255, 64, 129);
+}
+
+#headerStngs:focused, #notifications:focused, #profilepic:focused, 
+#homeBtn:focused, #chatsBtn:focused, #contactsBtn:focused, #newchatBtn:focused, 
+#sidebarStngs:focused, #logoutBtn:focused {
+    -fx-text-fill: rgb(0, 230, 255);
+    -fx-background-color: rgba(0, 230, 255, 0.15);
+}
+
+.scroll-pane{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+}
+
+.scroll-pane > .viewport{
+    -fx-background-color: transparent;
+}
+
+#aContact{
+    -fx-background-color: rgba(35, 31, 75, 0.7);
+    -fx-pref-height: 70px;
+    -fx-max-width: 600px;
+    -fx-background-radius: 16px;
+    -fx-cursor: hand;
+} #contactname{
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-pref-height: 20px;
+    -fx-max-width: 250px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+} #contacttext{
+    -fx-text-fill: rgba(230, 230, 255, 0.7);
+    -fx-pref-height: 20px;
+    -fx-max-width: 250px;
+    -fx-font-size: 12px;
+}

@@ -54,3 +54,70 @@
 #validationlbl{
     -fx-text-fill: rgb(255, 82, 82);
 }
+
+#homescreen{
+    -fx-background-color: rgb(18, 18, 18);
+}
+
+#header{
+    -fx-background-color: rgb(18, 18, 18);
+}
+
+#mainheader{
+    -fx-border-color: transparent transparent white white;
+    -fx-border-width: 0.2px;
+}
+
+#vachancontainer{
+    -fx-background-color: rgb(38, 38, 38);
+    -fx-border-color: transparent transparent white transparent;
+    -fx-border-width: 0.2px;
+}
+
+#sidebar{
+    -fx-background-color: rgb(38, 38, 38);
+    -fx-border-color: transparent white transparent transparent;
+    -fx-border-width: 0.2px;
+}
+
+#onlineList{
+    -fx-background-color: rgb(38, 38, 38);
+}
+
+#sidebarbuffer{
+    -fx-border-color: transparent transparent white transparent;
+    -fx-border-width: 0.2px;
+}
+
+#vachantext{
+    -fx-text-fill: rgb(235, 235, 235);
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+#wlcmtext{
+    -fx-text-fill: rgb(235, 235, 235);
+    -fx-font-weight: bold;
+}
+
+#recentchatslbl{
+    -fx-text-fill: rgb(235, 235, 235);
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+#onlineListLabel{
+    -fx-text-fill: rgb(235, 235, 235);
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+#headerStngs, #notifications, #profilepic, #homeBtn, #chatsBtn, #contactsBtn, #newchatBtn, #sidebarStngs, #logoutBtn{
+    -fx-text-fill: rgb(235, 235, 235);
+    -fx-background-color: transparent;
+}#headerStngs:hover, #notifications:hover, #profilepic:hover, #homeBtn:hover, #chatsBtn:hover, #contactsBtn:hover, #newchatBtn:hover, #sidebarStngs:hover, #logoutBtn:hover{
+    -fx-text-fill: grey;
+}#headerStngs:focused, #notifications:focused, #profilepic:focused, #homeBtn:focused, #chatsBtn:focused, #contactsBtn:focused, #newchatBtn:focused, #sidebarStngs:focused, #logoutBtn:focused{
+    -fx-text-fill: rgb(66, 133, 244);
+    -fx-background-color: rgba(3, 218, 197, .5);
+}

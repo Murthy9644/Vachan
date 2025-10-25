@@ -86,7 +86,7 @@ public class LoginPageController{
             validationlbl.setText("Account doesn't exist");
         }
                 
-        else if (ack){
+        else if (ack == true){
             root = Utils.setRoot("home");
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = ((Node) (event.getSource())).getScene();

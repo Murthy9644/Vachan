@@ -1,8 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.HomePageController">
-    <!-- Your UI elements here -->
-</AnchorPane>
+<BorderPane fx:id="homescreen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomePageController">
+   <left>
+      <VBox fx:id="sidebar" maxWidth="162.0" minWidth="150.0" prefHeight="572.0" prefWidth="162.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="searchBar" focusTraversable="false" prefHeight="32.0" prefWidth="142.0" promptText="🔎 Search" style="-fx-background-radius: 8px;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="homeBtn" alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#home" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="🏠 Home">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="chatsBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" onAction="#chats" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="💬 Chats">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="contactsBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="👥 Contacts">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="newchatBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="➕ New chat">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <HBox fx:id="sidebarbuffer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="189.0" prefWidth="162.0" VBox.vgrow="ALWAYS" />
+            <Button fx:id="sidebarStngs" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="🛠 Settings">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: red;" text="📴 Logout">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox fx:id="header" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="52.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="vachancontainer" prefHeight="52.0" prefWidth="161.0">
+               <children>
+                  <Label fx:id="vachantext" alignment="CENTER" layoutX="42.0" layoutY="7.0" prefHeight="39.0" prefWidth="79.0" text="Vachan" textAlignment="CENTER" wrapText="true" />
+                  <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/vachan-logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <HBox fx:id="mainheader" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" translateY="1.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="wlcmtext" alignment="BASELINE_LEFT" prefHeight="52.0" prefWidth="212.0" text="Welcome">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Pane prefHeight="52.0" prefWidth="175.0">
+                     <children>
+                        <Button fx:id="headerStngs" focusTraversable="false" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" text="🛠">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="notifications" focusTraversable="false" layoutX="61.0" layoutY="7.0" mnemonicParsing="false" text="🔔">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="profilepic" fitHeight="41.0" fitWidth="45.0" layoutX="114.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/default_user.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="NONE" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <VBox fx:id="onlineList" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="520.0" prefWidth="167.0" style="-fx-background-radius: 15px;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+         </BorderPane.margin>
+         <children>
+            <Label fx:id="onlineListLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Currently Active">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="activelistContainer" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox fx:id="recentchats" focusTraversable="true" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="recentchatslbl" maxWidth="1.7976931348623157E308" text="Recent Chats">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="recentchatsContainer" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </ScrollPane>
+         </children>
+         <BorderPane.margin>
+            <Insets top="15.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

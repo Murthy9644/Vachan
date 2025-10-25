@@ -12,9 +12,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="homescreen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomePageController">
+<BorderPane fx:id="homescreen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ChatsPageController">
    <left>
       <VBox fx:id="sidebar" maxWidth="162.0" minWidth="150.0" prefHeight="572.0" prefWidth="162.0" BorderPane.alignment="CENTER">
          <children>
@@ -23,7 +24,7 @@
                   <Insets left="10.0" right="10.0" top="20.0" />
                </VBox.margin>
             </TextField>
-            <Button fx:id="homeBtn" alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#home" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="🏠 Home">
+            <Button fx:id="homeBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" onAction="#home" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="🏠 Home">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
@@ -34,7 +35,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="chatsBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" onAction="#chats" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="💬 Chats">
+            <Button fx:id="chatsBtn" alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#chats" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="💬 Chats">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -163,7 +164,7 @@
    <center>
       <VBox fx:id="recentchats" focusTraversable="true" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="recentchatslbl" maxWidth="1.7976931348623157E308" text="Recent Chats">
+            <Label fx:id="recentchatslbl" maxWidth="1.7976931348623157E308" text="Chats">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
@@ -174,13 +175,25 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <ScrollPane fx:id="recentchatsContainer" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <ScrollPane fx:id="chatsContainer" fitToWidth="true" focusTraversable="false" minHeight="150.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
                </VBox.margin>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
+               <content>
+                  <Pane fx:id="aContact" maxWidth="0.0" onMouseClicked="#clicked" prefHeight="0.0" prefWidth="0.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="contactname" layoutX="95.0" layoutY="14.0" text="Murthy" />
+                        <Label fx:id="contacttext" layoutX="95.0" layoutY="35.0" maxWidth="0.0" text="How are you being such a CSE King" />
+                        <Circle fill="#27435e" layoutX="44.0" layoutY="35.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </Pane>
+               </content>
             </ScrollPane>
          </children>
          <BorderPane.margin>

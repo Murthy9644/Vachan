@@ -7,9 +7,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class HomePageController{
+public class ChatsPageController{
     
     // Global things
     private Stage stage;
@@ -18,6 +19,12 @@ public class HomePageController{
     
     @FXML
     private Button homeBtn, chatsBtn, contactsBtn, newchatBtn;
+
+    @FXML
+    private Pane aContact;
+
+    @FXML
+    private void clicked(ActionEvent event){}
 
     @FXML
     private void home(ActionEvent event) throws Exception{
@@ -38,12 +45,4 @@ public class HomePageController{
         stage.setScene(scene);
         stage.show();
     }
-
-    // @Override
-    // public void initialize(URL location, ResourceBundle resource){
-    //     Platform.runLater(() -> {
-    //         homeBtn.requestFocus();
-    //         homeBtn.fire();
-    //     });
-    // }
 }

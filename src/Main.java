@@ -25,7 +25,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primarystage) throws Exception{
         Scene scene =  new Scene(root, screenwidth, screenheight);
-        scene.getStylesheets().add(Utils.setStyleSheet("newmoon"));
+        scene.getStylesheets().add(Utils.setStyleSheet("neovibe"));
         primarystage.setScene(scene);
         primarystage.setTitle("Vachan");
         primarystage.getIcons().add(new Image(getClass().getResourceAsStream("resources/images/vachan-logo.png")));
@@ -39,11 +39,11 @@ public class Main extends Application{
     public static void main(String args[]) throws Exception{
         new Utils();
         ServerCommunication.fireClientConnection();
-        // FileIO files = new FileIO();
+        FileIO files = new FileIO();
 
-        // if (! files.chkUserData()) root = Utils.setRoot("signup");
-        // else root = Utils.setRoot("home");
-        root = Utils.setRoot("signup");
+        if (! files.chkUserData()) root = Utils.setRoot("signup");
+        else root = Utils.setRoot("home");
+        // root = Utils.setRoot("signup");
         
         setScreenDim();
         launch(args);

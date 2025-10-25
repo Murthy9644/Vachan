@@ -11,11 +11,13 @@ public class Utils{
     private static final String loginfxml = "/resources/FXML/login-screen.fxml";
     private static final String signupfxml = "/resources/FXML/signup-screen.fxml";
     private static final String homefxml = "/resources/FXML/home-screen.fxml";
+    private static final String chatsfxml = "/resources/FXML/chats-screen.fxml";
 
     // Page roots:
     private static Parent loginroot;
     private static Parent signuproot;
     private static Parent homeroot;
+    private static Parent chatsroot;
 
     // Stylesheets:
     private static final String newmoon = "/resources/themes/newmoon.css";
@@ -27,12 +29,15 @@ public class Utils{
     
         switch (theme){
             case "newmoon": themename = newmoon;
+            break;
     
             case "dawnlight": themename = dawnlight;
+            break;
     
             case "neovibe": themename = neovibe;
+            break;
     
-            default: themename = newmoon;
+            default: themename = neovibe;
         }
 
         return Utils.class.getResource(themename).toExternalForm();
@@ -47,6 +52,8 @@ public class Utils{
 
             case "home": return homeroot;
 
+            case "chats": return chatsroot;
+
             default: return null;
         }
     }
@@ -56,6 +63,7 @@ public class Utils{
             loginroot = FXMLLoader.load(Utils.class.getResource(loginfxml));
             signuproot = FXMLLoader.load(Utils.class.getResource(signupfxml));
             homeroot = FXMLLoader.load(Utils.class.getResource(homefxml));
+            chatsroot = FXMLLoader.load(Utils.class.getResource(chatsfxml));
         }
         catch (IOException e){
             e.printStackTrace();

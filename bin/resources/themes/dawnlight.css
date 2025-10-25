@@ -1,0 +1,140 @@
+/* 🌅 Dawn Light Theme — Clean, Minimal, and Bright */
+.root {
+    -fx-font-family: "Consolas";
+}
+
+/* General backgrounds */
+#body {
+    -fx-background-color: rgb(250, 250, 250);
+}
+
+#loginpane {
+    -fx-background-color: rgb(240, 242, 245);
+    -fx-background-radius: 10px;
+}
+
+/* Text styles */
+#createacclabel {
+    -fx-font-size: 13px;
+    -fx-text-fill: rgb(33, 33, 33);
+}
+
+/* Buttons: Create Account + Login */
+#createaccbtn, #loginbtn {
+    -fx-background-color: rgb(25, 118, 210); /* primary blue accent */
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-font-size: 13px;
+}
+
+#createaccbtn:hover, #loginbtn:hover {
+    -fx-background-color: rgba(25, 118, 210, 0.8);
+}
+
+#createaccbtn:pressed, #loginbtn:pressed {
+    -fx-border-color: rgb(56, 142, 60); /* accent-alt green border */
+    -fx-border-width: 0.5px;
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+}
+
+/* Input fields */
+#username, #pswd {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-border-color: transparent transparent rgb(25, 118, 210) transparent;
+    -fx-background-radius: 5px;
+    -fx-text-fill: rgb(33, 33, 33);
+    -fx-text-alignment: center;
+    -fx-font-size: 14px;
+}
+
+#username:focused, #pswd:focused {
+    -fx-border-color: transparent transparent rgb(56, 142, 60) transparent; /* green when focused */
+}
+
+/* Account navigation buttons */
+#haveaccbtn, #donthaveaccbtn {
+    -fx-font-size: 13px;
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(25, 118, 210);
+}
+
+#haveaccbtn:hover, #donthaveaccbtn:hover {
+    -fx-text-fill: rgb(56, 142, 60);
+}
+
+/* Validation text */
+#validationlbl {
+    -fx-text-fill: rgb(244, 67, 54); /* red utility */
+}
+
+/* Home screen layout */
+#homescreen {
+    -fx-background-color: rgb(240, 242, 245);
+}
+
+#header {
+    -fx-background-color: rgb(240, 242, 245);
+}
+
+#mainheader {
+    -fx-border-color: transparent transparent rgb(200, 200, 200) white;
+    -fx-border-width: 0.2px;
+}
+
+#vachancontainer {
+    -fx-background-color: rgb(250, 250, 250);
+    -fx-border-color: transparent transparent rgb(200, 200, 200) transparent;
+    -fx-border-width: 0.2px;
+}
+
+#sidebar {
+    -fx-background-color: rgb(250, 250, 250);
+    -fx-border-color: transparent rgb(200, 200, 200) transparent transparent;
+    -fx-border-width: 0.2px;
+}
+
+#onlineList {
+    -fx-background-color: rgb(250, 250, 250);
+}
+
+#sidebarbuffer {
+    -fx-border-color: transparent transparent rgb(200, 200, 200) transparent;
+    -fx-border-width: 0.2px;
+}
+
+/* Text colors */
+#vachantext, #wlcmtext, #recentchatslbl, #onlineListLabel {
+    -fx-text-fill: rgb(33, 33, 33);
+    -fx-font-weight: bold;
+}
+
+#vachantext {
+    -fx-font-size: 16px;
+}
+
+#recentchatslbl {
+    -fx-font-size: 15px;
+}
+
+#onlineListLabel {
+    -fx-font-size: 14px;
+}
+
+/* Sidebar + Header buttons */
+#headerStngs, #notifications, #profilepic, #homeBtn, #chatsBtn, #contactsBtn, #newchatBtn, #sidebarStngs, #logoutBtn {
+    -fx-text-fill: rgb(33, 33, 33);
+    -fx-background-color: transparent;
+}
+
+#headerStngs:hover, #notifications:hover, #profilepic:hover, 
+#homeBtn:hover, #chatsBtn:hover, #contactsBtn:hover, 
+#newchatBtn:hover, #sidebarStngs:hover, #logoutBtn:hover {
+    -fx-text-fill: rgb(56, 142, 60); /* subtle green hover */
+}
+
+#headerStngs:focused, #notifications:focused, #profilepic:focused, 
+#homeBtn:focused, #chatsBtn:focused, #contactsBtn:focused, 
+#newchatBtn:focused, #sidebarStngs:focused, #logoutBtn:focused {
+    -fx-text-fill: rgb(25, 118, 210);
+    -fx-background-color: rgba(25, 118, 210, 0.15);
+}

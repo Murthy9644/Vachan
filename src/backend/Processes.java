@@ -10,4 +10,8 @@ public class Processes{
 
         return false;
     }
+
+    public static void addContact(){
+        //
+    }
 }
