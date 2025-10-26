@@ -7,11 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class HomePageController{
+public class NewcontactsPageController{
     
-    // Global things
     // Global things
     private Stage stage;
     private Scene scene;
@@ -24,7 +25,17 @@ public class HomePageController{
     private Button notifications;
 
     @FXML
+    private Pane aContact;
+
+    @FXML
+    private TextField contactsearchbar;
+
+    @FXML
+    private void clicked(ActionEvent event){}
+
+    @FXML
     private void home(ActionEvent event) throws Exception{
+        root = Utils.setRoot("home");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = ((Node) (event.getSource())).getScene();
         scene.setRoot(root);
@@ -54,7 +65,6 @@ public class HomePageController{
 
     @FXML
     private void newContacts(ActionEvent event) throws Exception{
-        root = Utils.setRoot("newcontact");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = ((Node) (event.getSource())).getScene();
         scene.setRoot(root);
@@ -64,12 +74,17 @@ public class HomePageController{
 
     @FXML
     private void notifications(ActionEvent event) throws Exception{
-        NotificationsController.prevscreen = "home";
+        NotificationsController.prevscreen = "newcontact";
         root = Utils.setRoot("notifications");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = ((Node) (event.getSource())).getScene();
         scene.setRoot(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void startSearch(){
+        //
     }
 }

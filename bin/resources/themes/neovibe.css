@@ -66,6 +66,12 @@
     -fx-text-fill: rgb(255, 193, 7);
 }
 
+#mainHeader{
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
 /* Home Screen Layout */
 #homescreen {
     -fx-background-color: rgb(20, 18, 45);
@@ -122,20 +128,30 @@
 /* Icon Buttons and Topbar Items */
 #headerStngs, #notifications, #profilepic, 
 #homeBtn, #chatsBtn, #contactsBtn, #newchatBtn, 
-#sidebarStngs, #logoutBtn {
+#sidebarStngs, #logoutBtn{
     -fx-text-fill: rgb(230, 230, 255);
     -fx-background-color: transparent;
 }
 
 #headerStngs:hover, #notifications:hover, #profilepic:hover, 
 #homeBtn:hover, #chatsBtn:hover, #contactsBtn:hover, #newchatBtn:hover, 
-#sidebarStngs:hover, #logoutBtn:hover {
+#sidebarStngs:hover, #logoutBtn:hover{
     -fx-text-fill: rgb(255, 64, 129);
 }
 
-#headerStngs:focused, #notifications:focused, #profilepic:focused, 
-#homeBtn:focused, #chatsBtn:focused, #contactsBtn:focused, #newchatBtn:focused, 
-#sidebarStngs:focused, #logoutBtn:focused {
+#backBtn{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-border-width: 1px;
+    -fx-text-fill: rgb(255, 64, 129);
+}
+
+#backBtn:hover{
+    -fx-border-color: transparent transparent rgb(255, 64, 129) transparent;
+    -fx-border-width: 1px;
+}
+
+#currentBtn{
     -fx-text-fill: rgb(0, 230, 255);
     -fx-background-color: rgba(0, 230, 255, 0.15);
 }
@@ -167,4 +183,25 @@
     -fx-pref-height: 20px;
     -fx-max-width: 250px;
     -fx-font-size: 12px;
+}
+
+#newcontactHeader{
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+#newcontactText, #tempLbl{
+    -fx-text-fill: rgba(230, 230, 255, 0.85);
+    -fx-font-size: 12px;
+}
+
+#contactsearchbar{
+    -fx-background-radius: 8px;
+}
+
+#pymk{
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
 }

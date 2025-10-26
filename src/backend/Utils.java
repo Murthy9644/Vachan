@@ -12,12 +12,18 @@ public class Utils{
     private static final String signupfxml = "/resources/FXML/signup-screen.fxml";
     private static final String homefxml = "/resources/FXML/home-screen.fxml";
     private static final String chatsfxml = "/resources/FXML/chats-screen.fxml";
+    private static final String contactsfxml = "/resources/FXML/contacts-screen.fxml";
+    private static final String newcontactfxml = "/resources/FXML/newcontact-screen.fxml";
+    private static final String notificationsfxml = "/resources/FXML/notifications.fxml";
 
     // Page roots:
     private static Parent loginroot;
     private static Parent signuproot;
     private static Parent homeroot;
     private static Parent chatsroot;
+    private static Parent contactsroot;
+    private static Parent newcontactroot;
+    private static Parent notificationsroot;
 
     // Stylesheets:
     private static final String newmoon = "/resources/themes/newmoon.css";
@@ -54,6 +60,12 @@ public class Utils{
 
             case "chats": return chatsroot;
 
+            case "contacts": return contactsroot;
+
+            case "newcontact": return newcontactroot;
+
+            case "notifications": return notificationsroot;
+
             default: return null;
         }
     }
@@ -64,6 +76,9 @@ public class Utils{
             signuproot = FXMLLoader.load(Utils.class.getResource(signupfxml));
             homeroot = FXMLLoader.load(Utils.class.getResource(homefxml));
             chatsroot = FXMLLoader.load(Utils.class.getResource(chatsfxml));
+            contactsroot = FXMLLoader.load(Utils.class.getResource(contactsfxml));
+            newcontactroot = FXMLLoader.load(Utils.class.getResource(newcontactfxml));
+            notificationsroot = FXMLLoader.load(Utils.class.getResource(notificationsfxml));
         }
         catch (IOException e){
             e.printStackTrace();

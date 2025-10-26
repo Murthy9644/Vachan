@@ -21,6 +21,9 @@ public class ChatsPageController{
     private Button homeBtn, chatsBtn, contactsBtn, newchatBtn;
 
     @FXML
+    private Button notifications;
+
+    @FXML
     private Pane aContact;
 
     @FXML
@@ -38,7 +41,37 @@ public class ChatsPageController{
 
     @FXML
     private void chats(ActionEvent event) throws Exception{
-        root = Utils.setRoot("chats");
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = ((Node) (event.getSource())).getScene();
+        scene.setRoot(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void contacts(ActionEvent event) throws Exception{
+        root = Utils.setRoot("contacts");
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = ((Node) (event.getSource())).getScene();
+        scene.setRoot(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void newContacts(ActionEvent event) throws Exception{
+        root = Utils.setRoot("newcontact");
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = ((Node) (event.getSource())).getScene();
+        scene.setRoot(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void notifications(ActionEvent event) throws Exception{
+        NotificationsController.prevscreen = "chats";
+        root = Utils.setRoot("notifications");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = ((Node) (event.getSource())).getScene();
         scene.setRoot(root);

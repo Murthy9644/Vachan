@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="homescreen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ChatsPageController">
@@ -35,7 +34,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="chatsBtn" alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#chats" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="💬 Chats">
+            <Button fx:id="contactsBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" onAction="#contacts" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="👥 Contacts">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -43,7 +42,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="contactsBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="👥 Contacts">
+            <Button fx:id="currentBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" onAction="#chats" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="💬 Chats">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -51,7 +50,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="newchatBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="➕ New chat">
+            <Button fx:id="newchatBtn" alignment="BASELINE_LEFT" focusTraversable="false" mnemonicParsing="false" onAction="#newContacts" prefHeight="31.0" prefWidth="142.0" style="-fx-background-radius: 8px;" text="➕ New contact">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -97,7 +96,7 @@
             </Pane>
             <HBox fx:id="mainheader" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" translateY="1.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label fx:id="wlcmtext" alignment="BASELINE_LEFT" prefHeight="52.0" prefWidth="212.0" text="Welcome">
+                  <Label fx:id="wlcmtext" alignment="BASELINE_LEFT" prefHeight="52.0" prefWidth="212.0">
                      <padding>
                         <Insets left="25.0" />
                      </padding>
@@ -116,7 +115,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="notifications" focusTraversable="false" layoutX="61.0" layoutY="7.0" mnemonicParsing="false" text="🔔">
+                        <Button fx:id="notifications" focusTraversable="false" layoutX="61.0" layoutY="7.0" mnemonicParsing="false" onAction="#notifications" text="🔔">
                            <font>
                               <Font size="17.0" />
                            </font>
@@ -182,18 +181,6 @@
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
-               <content>
-                  <Pane fx:id="aContact" maxWidth="0.0" onMouseClicked="#clicked" prefHeight="0.0" prefWidth="0.0">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <children>
-                        <Label fx:id="contactname" layoutX="95.0" layoutY="14.0" text="Murthy" />
-                        <Label fx:id="contacttext" layoutX="95.0" layoutY="35.0" maxWidth="0.0" text="How are you being such a CSE King" />
-                        <Circle fill="#27435e" layoutX="44.0" layoutY="35.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </Pane>
-               </content>
             </ScrollPane>
          </children>
          <BorderPane.margin>
