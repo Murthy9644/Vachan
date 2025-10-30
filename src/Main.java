@@ -31,7 +31,7 @@ public class Main extends Application{
         primarystage.getIcons().add(new Image(getClass().getResourceAsStream("resources/images/vachan-logo.png")));
         primarystage.show();
 
-        primarystage.setOnCloseRequest(event -> {
+        primarystage.setOnCloseRequest(_ -> {
             ServerCommunication.stopClientConnextion();
         });
     }

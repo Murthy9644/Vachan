@@ -32,8 +32,19 @@ public class ServerCommunication{
         return pswd;
     }
 
+    public static String sendFrndReq(String frndusername){
+        output.println(frndusername);
+        output.println("SENDFRIENDREQ");
+        String resp = input.nextLine();
+
+        return resp;
+    }
+
     public static void fireClientConnection() throws Exception{
-        me = new Socket("localhost", 5500);
+        me = new Socket(
+            "172.18.202.106", 
+            5500
+        );
         input = new Scanner(me.getInputStream());
         output = new PrintWriter(me.getOutputStream(), true);
     }
