@@ -40,9 +40,14 @@ public class Main extends Application{
         new Utils();
         ServerCommunication.fireClientConnection();
         FileIO files = new FileIO();
-
+        
         if (! files.chkUserData()) root = Utils.setRoot("signup");
-        else root = Utils.setRoot("home");
+        else{
+            root = Utils.setRoot("home");
+            String userdata[] = files.readUserData();
+            // Send username to server indicating ready to send requests
+            ServerCommunication.sendUserName(userdata[0]);
+        }
         // root = Utils.setRoot("signup");
         
         setScreenDim();

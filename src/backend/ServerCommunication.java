@@ -1,6 +1,8 @@
 package backend;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
@@ -8,7 +10,9 @@ import java.util.Scanner;
 public class ServerCommunication{
     private static Socket me;
     private static Scanner input;
+    private static ObjectInputStream objectinput;
     private static PrintWriter output;
+    private static ObjectOutputStream objectoutput;
 
     public static Boolean sendLoginInfo(Object data[]){
         output.println((String) data[0]);   // username
@@ -32,9 +36,23 @@ public class ServerCommunication{
         return pswd;
     }
 
+    public static String[] getUsernames(String searchstr){
+        output.println("GETUSERNAMES");
+        output.println(searchstr);
+
+        try{
+            String names[] = (String[]) objectinput.readObject();
+            return names;
+        }
+        catch (Exception e){e.printStackTrace();
+            System.out.println("Got ntng");
+            return null;
+        }
+    }
+
     public static String sendFrndReq(String frndusername){
-        output.println(frndusername);
         output.println("SENDFRIENDREQ");
+        output.println(frndusername);
         String resp = input.nextLine();
 
         return resp;
@@ -42,11 +60,18 @@ public class ServerCommunication{
 
     public static void fireClientConnection() throws Exception{
         me = new Socket(
-            "172.18.202.106", 
+            "localhost", 
             5500
         );
+
         input = new Scanner(me.getInputStream());
         output = new PrintWriter(me.getOutputStream(), true);
+        objectoutput = new ObjectOutputStream(me.getOutputStream());
+        objectinput = new ObjectInputStream(me.getInputStream());
+    }
+
+    public static void sendUserName(String username){
+        output.println(username);
     }
 
     public static void stopClientConnextion(){
@@ -57,6 +82,8 @@ public class ServerCommunication{
             input.close();
             output.close();
             me.close();
+            objectinput.close();
+            objectoutput.close();
         }
         catch (IOException e){
             e.printStackTrace();

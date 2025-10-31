@@ -24,6 +24,9 @@ public class FileIO{
     private static File userdata;
     private static File folder;
 
+    // Instances:
+    private static ObjectMapper jsonmapper = new ObjectMapper();
+
     public Boolean chkUserData() throws IOException{
 
         if (userdata.exists()) return true;
@@ -31,12 +34,24 @@ public class FileIO{
         return false;
     }
 
+    public String[] readUserData(){
+
+        try {
+            jsonmapper = new ObjectMapper();
+            UserDataStructure data = jsonmapper.readValue(userdata, UserDataStructure.class);
+            String userdataarr[] = {data.username, data.password};
+
+            return userdataarr;
+        }
+        catch (Exception e){e.printStackTrace(); return null;}
+    }
+
     public void writeUserData(String data[]){
         this.username = data[0];
         this.password = data[1];
 
         try {
-            ObjectMapper jsonmapper = new ObjectMapper();
+            jsonmapper = new ObjectMapper();
             jsonmapper.writerWithDefaultPrettyPrinter().writeValue(userdata, this);
         }
         catch (Exception e){

@@ -75,7 +75,6 @@ public class SignupPageController{
             validationlbl.setText("");
         }
 
-        files.writeUserData(new String[] {username.getText(), pswd.getText()});
         Boolean ack = ServerCommunication.sendLoginInfo(new Object[] {username.getText(), pswd.getText()});
 
         if (! ack){
@@ -89,6 +88,8 @@ public class SignupPageController{
 
             return;
         }
+        
+        files.writeUserData(new String[] {username.getText(), pswd.getText()});
         
         root = Utils.setRoot("home");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

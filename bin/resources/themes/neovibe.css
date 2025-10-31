@@ -127,7 +127,7 @@
 
 /* Icon Buttons and Topbar Items */
 #headerStngs, #notifications, #profilepic, 
-#homeBtn, #chatsBtn, #contactsBtn, #newchatBtn, 
+#homeBtn, #chatsBtn, #contactsBtn, #newchatBtn,
 #sidebarStngs, #logoutBtn{
     -fx-text-fill: rgb(230, 230, 255);
     -fx-background-color: transparent;
@@ -135,6 +135,7 @@
 
 #headerStngs:hover, #notifications:hover, #profilepic:hover, 
 #homeBtn:hover, #chatsBtn:hover, #contactsBtn:hover, #newchatBtn:hover, 
+.contactsearchres_addfrnd:hover,
 #sidebarStngs:hover, #logoutBtn:hover{
     -fx-text-fill: rgb(255, 64, 129);
 }
@@ -156,13 +157,50 @@
     -fx-background-color: rgba(0, 230, 255, 0.15);
 }
 
-.scroll-pane{
+.scroll-pane {
     -fx-background-color: transparent;
+    -fx-background: transparent;
     -fx-border-color: transparent;
-    -fx-border-width: 0px;
+    -fx-border-width: 0;
+    -fx-padding: 4;
 }
 
-.scroll-pane > .viewport{
+/* --- Viewport --- */
+.scroll-pane > .viewport {
+    -fx-background-color: transparent; /* background-alt */
+    -fx-background-radius: 10;
+}
+
+/* --- ScrollBar Styling --- */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+/* Track (scroll area background) */
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 10;
+}
+
+/* Thumb (the draggable part) */
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: rgb(255, 64, 129); /* accent */
+    -fx-background-radius: 10;
+    -fx-opacity: 0.7;
+    -fx-effect: dropshadow(gaussian, rgba(255,64,129,0.6), 6, 0.4, 0, 0);
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: rgb(0, 230, 255); /* accent-alt on hover */
+    -fx-opacity: 1.0;
+}
+
+/* --- Corner (where two scrollbars meet) --- */
+.scroll-pane .corner {
     -fx-background-color: transparent;
 }
 
@@ -183,6 +221,23 @@
     -fx-pref-height: 20px;
     -fx-max-width: 250px;
     -fx-font-size: 12px;
+}
+
+#searchrescontact{
+    -fx-background-color: rgba(35, 31, 75, 0.7);
+    -fx-background-radius: 16px;
+} #contactsearchres_name{
+    -fx-text-fill: rgb(230, 230, 255, 0.7);
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+} #contactsearchres_text{
+    -fx-text-fill: rgba(230, 230, 255, 0.7);
+    -fx-font-size: 12px;
+} .contactsearchres_addfrnd{
+    -fx-text-fill: rgb(230, 230, 255);
+    -fx-background-color: transparent;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
 }
 
 #newcontactHeader{
